@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import './App.css';
+import { Link } from 'react-router-dom';
 
-class App extends Component {
+class WeatherDetail extends Component {
   state = {
     city: 'moscow',
     temperature: '',
@@ -14,20 +14,23 @@ class App extends Component {
     this.fetchWeatherData(this.state.city);
   }
 
-  render() {
+  render () {
     return (
-      <div className="app">
+      <div className="weather-detail">
+        <Link to="/">to main page</Link>
+
+        <br/>
         City: {this.state.city}
         <br/>
         Temperature: {this.state.temperature}
       </div>
-    )
+    );
   }
 
   // get city location by ip
   fetchZipCodeByIP = () => {
     fetch(`https://freegeoip.net/json/`)
-      //.then(response => response.json())
+    //.then(response => response.json())
       .then((response) => {
         console.log('fetching ip from https://freegeoip.net');
         return response.json();
@@ -60,7 +63,6 @@ class App extends Component {
       })
       .catch(error => console.error(error));
   };
-
 }
 
-export default App;
+export default WeatherDetail;
