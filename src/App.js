@@ -1,14 +1,9 @@
 import React, { Component } from 'react';
-import { HashRouter as Router,
-         Route,
-         Switch,
-         Link
-} from 'react-router-dom';
 import './App.css';
 
 class App extends Component {
   state = {
-    city: 'Saint Petersburg',
+    city: 'moscow',
     temperature: '',
     fetching: true,
   }
@@ -21,7 +16,7 @@ class App extends Component {
 
   render() {
     return (
-      <div>
+      <div className="app">
         City: {this.state.city}
         <br/>
         Temperature: {this.state.temperature}
