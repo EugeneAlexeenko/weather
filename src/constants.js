@@ -1,2 +1,2 @@
-export const CITY_ADD = 'CITY_ADD';
-export const CITY_REMOVE = 'CITY_REMOVE';
+export const ADD_WIDGET = 'ADD_WIDGET';
+export const REMOVE_WIDGET = 'ADD_WIDGET';

@@ -6,8 +6,8 @@ import './Main.css';
 class Main extends Component {
   render() {
     const widgets = this.props.displayedCities.map( (city) => (
-      <div key={city.id}>
-        <WeatherPreview city={city.name}/>
+      <div key={city}>
+        <WeatherPreview city={city}/>
       </div>)
     );
     return (

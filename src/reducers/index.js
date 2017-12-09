@@ -1,19 +1,21 @@
+import '../constants';
+
 const initialState = {
-  cities: [
-    { id: '0', name: 'Saint Petersburg' },
-    { id: '1', name: 'Moscow' },
-    { id: '3', name: 'Kiev' }
-  ],
-  displayedCities: [
-    { id: '0', name: 'Saint Petersburg' }
-  ]
+  cities: [ 'Saint Petersburg', 'Moscow', 'Kiev', 'Novosibirsk' ],
+  displayedCities: [ 'Saint Petersburg' ]
 };
 
 export default (state = initialState, action) => {
   switch (action.type){
-    case 'ADD WIDGET':
-      return {...state}
+    case 'ADD_WIDGET':
+      if (state.displayedCities.indexOf(action.payload) !== -1 ) return;
+      return {...state, displayedCities: state.displayedCities.concat(action.payload)};
+    case 'REMOVE_WIDGET':
+      return {
+        ...state,
+        displayedCities:  state.displayedCities.filter( (city) => city !== action.payload)};
+    default:
+      return state;
   }
-  return state;
 };
 
