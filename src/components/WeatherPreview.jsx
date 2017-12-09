@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
 
 import './WeatherPreview.css';
 
@@ -26,7 +27,19 @@ class WeatherPreview extends Component {
 
   handleClose = (e) => {
     console.log('close');
+    this.props.removeWidget(this.props.city);
   }
 }
 
-export default WeatherPreview;
+const mapDispatchToProps = (dispatch) => {
+  return {
+    removeWidget: (city) => {
+      dispatch({
+        type: 'REMOVE_WIDGET',
+        payload: city
+      })
+    }
+  }
+};
+
+export default connect(null, mapDispatchToProps)(WeatherPreview);
