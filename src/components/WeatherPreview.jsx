@@ -13,7 +13,7 @@ class WeatherPreview extends Component {
         >
           close
         </button>
-        <h3>Город</h3>
+        <h3>{this.props.city}</h3>
         <p>(here will be data.....)</p>
         <Link to={`/test11111111111111`}
           className="weather-preview__btn-detail"

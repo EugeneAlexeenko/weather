@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 class WeatherDetail extends Component {
   state = {
-    city: 'moscow',
+    city: 'saint petersburg',
     temperature: '',
     fetching: true,
   }

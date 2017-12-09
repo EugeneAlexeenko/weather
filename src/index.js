@@ -6,7 +6,7 @@ import { composeWithDevTools } from 'redux-devtools-extension';
 import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
 
-import { HashRouter as Router, Route } from 'react-router-dom';
+import { HashRouter as Router } from 'react-router-dom';
 
 
 import './index.css';
@@ -19,9 +19,7 @@ const store = createStore(reducers, composeWithDevTools(applyMiddleware(thunk)))
 ReactDOM.render(
   <Provider store={store}>
     <Router >
-      <div>
         <App />
-      </div>
     </Router>
   </Provider>,
   document.getElementById('root'));
