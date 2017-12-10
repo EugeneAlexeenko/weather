@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
+import { getWeather } from "../actions";
 import './WeatherPreview.css';
 
 class WeatherPreview extends Component {
@@ -16,11 +17,18 @@ class WeatherPreview extends Component {
         </button>
         <h3>{this.props.city}</h3>
         <p>(here will be data.....)</p>
-        <Link to={`/test11111111111111`}
+        <Link to={`/detail/${this.props.city}`}
           className="weather-preview__btn-detail"
         >
           Show forecast
         </Link>
+        <div>
+          <button
+            onClick={this.props.onGetWeather}
+          >
+            Get weather
+          </button>
+        </div>
       </div>
     );
   }
@@ -38,6 +46,20 @@ const mapDispatchToProps = (dispatch) => {
         type: 'REMOVE_WIDGET',
         payload: city
       })
+    },
+    onGetWeather: () => {
+     // полный код
+     /* const asyncGetWeather = () => {
+        return (dispatch) => {
+          setTimeout(() => {
+            console.log('i got weather');
+            dispatch({ type: 'FETCH_WEATHER_SUCCESS', payload: [] })
+          }, 2000);
+        }
+      };
+      dispatch(asyncGetWeather()); */
+
+     dispatch(getWeather());
     }
   }
 };
