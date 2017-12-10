@@ -1,21 +1,22 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
+import AddCity from './AddCity';
+import CitiesItem from './CitiesItem';
+import './Cities.css';
 
 class Cities extends Component {
   render() {
-    console.log(this.props.cities);
-    const cities = this.props.cities.map((city) => (
-      <li key={city}>
-        {city}
-      </li>
+    const citiesList = this.props.displayedCities.map((city) => (
+      <CitiesItem key={city} city={city}/>
     ));
     return (
       <div>
         <Link to="/">to main page</Link>
         <h2>Edit cities list:</h2>
-        <ul>
-          {cities}
+        <AddCity />
+        <ul className="cities__list">
+          {citiesList}
         </ul>
       </div>
     );

@@ -1,0 +1,17 @@
+.cities__list-item {
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border: 1px solid black;
+}
+
+.cities__city-name {
+    font-size: 30px;
+}
+
+.cities__remove-btn {
+    width: 100px;
+    display: block;
+    background: crimson;
+}

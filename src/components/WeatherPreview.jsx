@@ -33,8 +33,7 @@ class WeatherPreview extends Component {
     );
   }
 
-  handleClose = (e) => {
-    console.log('close');
+  handleClose = () => {
     this.props.removeWidget(this.props.city);
   }
 }
@@ -43,7 +42,7 @@ const mapDispatchToProps = (dispatch) => {
   return {
     removeWidget: (city) => {
       dispatch({
-        type: 'REMOVE_WIDGET',
+        type: 'REMOVE_CITY',
         payload: city
       })
     },
