@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 class WeatherDetail extends Component {
   state = {
-    city: 'saint petersburg',
+    city: this.props.match.params.city,
     temperature: '',
     fetching: true,
   }
@@ -20,6 +20,7 @@ class WeatherDetail extends Component {
         <Link to="/">to main page</Link>
 
         <br/>
+        <h2>{this.props.match.params.city}</h2>
         City: {this.state.city}
         <br/>
         Temperature: {this.state.temperature}
@@ -40,8 +41,7 @@ class WeatherDetail extends Component {
         this.fetchWeatherData( data.city );
       })
       .catch((error) => {
-        console.log(error)
-        return
+        console.log(error => console.log(error));
       })
   };
 

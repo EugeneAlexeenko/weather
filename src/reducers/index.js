@@ -14,6 +14,11 @@ export default (state = initialState, action) => {
       return {
         ...state,
         displayedCities:  state.displayedCities.filter( (city) => city !== action.payload)};
+    case 'FETCH_WEATHER_SUCCESS':
+      return {
+        ...state,
+        fetchedData: action.payload
+      };
     default:
       return state;
   }
