@@ -3,28 +3,45 @@ import { connect } from 'react-redux';
 
 class AddCity extends Component {
   render() {
+    const { cities } = this.props;
+    console.log(cities);
+    const options = cities.map( (city) => (
+      <option
+        key={city}
+        value={city}
+      >
+        {city}
+      </option>
+    ));
+
     return (
       <div>
-        <h2>TODO Add city select</h2>
+        <select onChange={this.handleChange}>
+          {options}
+        </select>
       </div>
     );
+  }
+
+  handleChange = (event) => {
+    const cityToAdd = event.target.value;
+    this.props.addCity(cityToAdd);
   }
 }
 
 const mapStateToProps = (state) => ({
   cities: state.cities,
-  displayedCities: state.displayedCities
 });
 
-// const mapDispatchToProps = (dispatch) => {
-//   return {
-//     removeWidget: (city) => {
-//       dispatch({
-//         type: 'REMOVE_WIDGET',
-//         payload: city
-//       });
-//     }
-//   }
-// };
+const mapDispatchToProps = (dispatch) => {
+  return {
+    addCity: (city) => {
+      dispatch({
+        type: 'ADD_CITY',
+        payload: city
+      });
+    }
+  }
+};
 
-export default connect(mapStateToProps)(AddCity);
+export default connect(mapStateToProps, mapDispatchToProps)(AddCity);

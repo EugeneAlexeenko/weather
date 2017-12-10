@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
+import AddCity from './AddCity';
 import WeatherPreview from './WeatherPreview';
 import './Main.css';
 
@@ -17,7 +18,7 @@ class Main extends Component {
           <Link to="/cities">Edit cities list</Link>
         </div>
         <h2>Main page</h2>
-        <p>select: Add weather widget</p>
+        <AddCity />
         <div className="main__previews-container">
           {widgets}
         </div>
