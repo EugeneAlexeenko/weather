@@ -1,22 +1,22 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import './AddCity.css';
 
 class AddCity extends Component {
   render() {
     const { cities } = this.props;
-    console.log(cities);
     const options = cities.map( (city) => (
-      <option
-        key={city}
-        value={city}
-      >
-        {city}
-      </option>
+      <option key={city} value={city}>{city}</option>
     ));
 
     return (
       <div>
-        <select onChange={this.handleChange}>
+        <select
+          className="add-city__select"
+          value="default"
+          onChange={this.handleChange}
+        >
+          <option value="default" disabled>Please, add city...</option>
           {options}
         </select>
       </div>

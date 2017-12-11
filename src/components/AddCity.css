@@ -1,0 +1,11 @@
+.add-city__select  {
+  width: 50%;
+  height: 50px;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  display: block;
+  font-size: 30px;
+  appearance: none;
+  color: #ccc;
+}
+
