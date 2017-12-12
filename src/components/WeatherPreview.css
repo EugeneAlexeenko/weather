@@ -1,8 +1,86 @@
 .weather-preview {
+    padding-top: 18px;
+    padding-bottom: 18px;
     width: 200px;
-    height: 200px;
-    margin: 10px 20px;
-    display: inline-block;
-    border-radius: 5px;
-    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
+    height: 250px;
+    margin: 32px 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    border-radius: 25px;
+    box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.3);
+    background: #01A7A6;
 }
+
+.weather-preview__btn-close {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    font-size: 24px;
+    color: #fff;
+    background: transparent;
+    border: none;
+}
+
+.weather-preview__city-icon {
+    margin-bottom: 10px;
+    width: 108px;
+    height: 108px;
+    border: 1px solid white;
+    border-radius: 50%;
+}
+
+.weather-preview__name {
+    margin: 0;
+    margin-bottom: auto;
+    font-family: Roboto, sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    color: #fff;
+}
+
+.weather-preview__data-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    outline: 1px solid black;
+}
+
+.weather-preview__temperature {
+    margin-bottom: 0;
+    padding-right: 20px;
+    -margin-right: 20px;
+    position: relative;
+    font-family: Roboto, sans-serif;
+    font-weight: 400;
+    font-size: 55px;
+    color: #fff;
+    outline: 1px solid red;
+}
+
+.weather-preview__degree {
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-family: Roboto, sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    color: #fff;
+}
+
+.weather-preview__weather-icon {
+    width: 70px;
+    height: 40px;
+    outline: 1px dashed #fff;
+}
+
+.weather-preview__link {
+    position: absolute;
+    right: 5px;
+    bottom: 5px;
+    text-decoration: none;
+    font-size: 20px;
+    color: #fff;
+}
+

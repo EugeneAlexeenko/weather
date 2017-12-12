@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
-import { getWeather } from "../actions";
 import './WeatherPreview.css';
 
 class WeatherPreview extends Component {
@@ -13,22 +12,21 @@ class WeatherPreview extends Component {
           className="weather-preview__btn-close"
           onClick={this.handleClose}
         >
-          close
+          &#x2715;
         </button>
-        <h3>{this.props.city}</h3>
-        <p>(here will be data.....)</p>
-        <Link to={`/detail/${this.props.city}`}
-          className="weather-preview__btn-detail"
-        >
-          Show forecast
-        </Link>
-        <div>
-          <button
-            onClick={this.props.onGetWeather}
-          >
-            Get weather
-          </button>
+        <div className="weather-preview__city-icon"></div>
+        <h3 className="weather-preview__name">{this.props.city}</h3>
+        <div className="weather-preview__data-container">
+          <div className="weather-preview__temperature">-35
+            <div className="weather-preview__degree">&#176;C</div>
+          </div>
+          <div className="weather-preview__weather-icon">1</div>
         </div>
+        <Link to={`/detail/${this.props.city}`}
+          className="weather-preview__link"
+        >
+          &#x2794;
+        </Link>
       </div>
     );
   }
@@ -45,20 +43,6 @@ const mapDispatchToProps = (dispatch) => {
         type: 'REMOVE_CITY',
         payload: city
       })
-    },
-    onGetWeather: () => {
-     // полный код
-     /* const asyncGetWeather = () => {
-        return (dispatch) => {
-          setTimeout(() => {
-            console.log('i got weather');
-            dispatch({ type: 'FETCH_WEATHER_SUCCESS', payload: [] })
-          }, 2000);
-        }
-      };
-      dispatch(asyncGetWeather()); */
-
-     dispatch(getWeather());
     }
   }
 };
