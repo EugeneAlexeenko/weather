@@ -7,11 +7,20 @@ import './Main.css';
 
 class Main extends Component {
   render() {
-    const widgets = this.props.displayedCities.map( (city) => (
-      <div key={city}>
-        <WeatherPreview city={city}/>
-      </div>)
-    );
+    const widgets = this.props.cities.map( (city) => {
+      if (city.isVisible) {
+        return (
+          <div key={city.id}>
+            <WeatherPreview
+              id={city.id}
+              city={city.name}
+            />
+          </div>
+        );
+      }
+      else return null;
+    });
+
     return (
       <div className="main">
         <div>
@@ -27,9 +36,8 @@ class Main extends Component {
   }
 }
 
-const mapStateToProps = state => ({
-  cities: state.cities,
-  displayedCities: state.displayedCities
+const mapStateToProps = (state) => ({
+  cities: state.cities
 });
 
 export default connect(mapStateToProps)(Main);

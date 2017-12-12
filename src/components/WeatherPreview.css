@@ -50,7 +50,7 @@
 .weather-preview__temperature {
     margin-bottom: 0;
     padding-right: 20px;
-    -margin-right: 20px;
+    margin-right: 20px;
     position: relative;
     font-family: Roboto, sans-serif;
     font-weight: 400;

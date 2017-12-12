@@ -5,8 +5,9 @@ import './AddCity.css';
 class AddCity extends Component {
   render() {
     const { cities } = this.props;
-    const options = cities.map( (city) => (
-      <option key={city} value={city}>{city}</option>
+    const filteredCities = cities.filter( (city) => !city.isVisible);
+    const options = filteredCities.map( (city) => (
+      <option key={city.id} value={city.id}>{city.name}</option>
     ));
 
     return (
@@ -35,10 +36,12 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    addCity: (city) => {
+    addCity: (id) => {
       dispatch({
         type: 'ADD_CITY',
-        payload: city
+        payload: {
+          id
+        }
       });
     }
   }

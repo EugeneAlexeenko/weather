@@ -20,7 +20,7 @@ class WeatherPreview extends Component {
           <div className="weather-preview__temperature">-35
             <div className="weather-preview__degree">&#176;C</div>
           </div>
-          <div className="weather-preview__weather-icon">1</div>
+          <div className="weather-preview__weather-icon"></div>
         </div>
         <Link to={`/detail/${this.props.city}`}
           className="weather-preview__link"
@@ -32,17 +32,19 @@ class WeatherPreview extends Component {
   }
 
   handleClose = () => {
-    this.props.removeWidget(this.props.city);
+    this.props.removeWidget(this.props.id);
   }
 }
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    removeWidget: (city) => {
+    removeWidget: (id) => {
       dispatch({
         type: 'REMOVE_CITY',
-        payload: city
-      })
+        payload: {
+          id
+        }
+      });
     }
   }
 };
