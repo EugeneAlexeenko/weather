@@ -17,8 +17,8 @@ export default (citiesState = initialState, action) => {
       });
     case REMOVE_CITY:
       return citiesState.map((city) => {
-        console.log(city);
         if (city.id !== +action.payload.id) {
+          return city;
         }
         return {
           ...city,

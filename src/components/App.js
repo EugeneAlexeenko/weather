@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import Main from './Main';
 import WeatherDetail from './WeatherDetail';
-import Cities from './Cities';
+import Cities from './CitiesList';
 import NotFound from './NotFound';
 
 import './App.css';

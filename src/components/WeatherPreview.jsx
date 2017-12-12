@@ -32,7 +32,8 @@ class WeatherPreview extends Component {
   }
 
   handleClose = () => {
-    this.props.removeWidget(this.props.id);
+    const { id, removeWidget } = this.props;
+    removeWidget(id);
   }
 }
 

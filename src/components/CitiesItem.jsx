@@ -19,25 +19,22 @@ class CitiesItem extends Component {
   }
 
   handleRemove = () => {
-    const { city } = this.props;
-    this.props.removeWidget(city);
+    const { id, removeWidget } = this.props;
+    removeWidget(id);
   }
 }
 
-const mapStateToProps = (state) => ({
-  cities: state.cities,
-  displayedCities: state.displayedCities
-});
-
 const mapDispatchToProps = (dispatch) => {
   return {
-    removeWidget: (city) => {
+    removeWidget: (id) => {
       dispatch({
         type: 'REMOVE_CITY',
-        payload: city
+        payload: {
+          id
+        }
       });
     }
   }
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(CitiesItem);
+export default connect(null, mapDispatchToProps)(CitiesItem);

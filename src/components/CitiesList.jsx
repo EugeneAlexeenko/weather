@@ -3,13 +3,20 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import AddCity from './AddCity';
 import CitiesItem from './CitiesItem';
-import './Cities.css';
+import './CitiesList.css';
 
 class Cities extends Component {
   render() {
-    const citiesList = this.props.displayedCities.map((city) => (
-      <CitiesItem key={city} city={city}/>
-    ));
+    const { cities } = this.props;
+    const citiesList = cities.map((city) => {
+      if (city.isVisible) return (
+        <CitiesItem
+          key={city.id}
+          id={city.id}
+          city={city.name}/>
+      );
+      return null;
+    });
     return (
       <div>
         <Link to="/">to main page</Link>
@@ -24,8 +31,7 @@ class Cities extends Component {
 }
 
 const mapStateToProps = (state) => ({
-  cities: state.cities,
-  displayedCities: state.displayedCities
+  cities: state.cities
 });
 
 export default connect(mapStateToProps)(Cities);
