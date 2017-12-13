@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 import './WeatherPreview.css';
+import {removeCity} from '../actions';
 
 class WeatherPreview extends Component {
   render () {
@@ -40,12 +41,7 @@ class WeatherPreview extends Component {
 const mapDispatchToProps = (dispatch) => {
   return {
     removeWidget: (id) => {
-      dispatch({
-        type: 'REMOVE_CITY',
-        payload: {
-          id
-        }
-      });
+      dispatch(removeCity(id));
     }
   }
 };

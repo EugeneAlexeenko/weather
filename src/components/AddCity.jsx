@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import './AddCity.css';
+import { addCity } from '../actions';
 
 class AddCity extends Component {
   render() {
@@ -37,12 +38,7 @@ const mapStateToProps = (state) => ({
 const mapDispatchToProps = (dispatch) => {
   return {
     addCity: (id) => {
-      dispatch({
-        type: 'ADD_CITY',
-        payload: {
-          id
-        }
-      });
+      dispatch(addCity(id));
     }
   }
 };

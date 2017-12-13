@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import './CitiesItem.css';
+import { removeCity } from "../actions";
 
 class CitiesItem extends Component {
   render() {
@@ -27,12 +28,7 @@ class CitiesItem extends Component {
 const mapDispatchToProps = (dispatch) => {
   return {
     removeWidget: (id) => {
-      dispatch({
-        type: 'REMOVE_CITY',
-        payload: {
-          id
-        }
-      });
+      dispatch(removeCity(id));
     }
   }
 };
