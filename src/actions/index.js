@@ -20,6 +20,7 @@ export function removeCity(id) {
 }
 
 export function loadWeather(id, nameAPI) {
+  console.log('load weather');
   return (dispatch) => {
     dispatch({
       type: LOAD_WEATHER_START,

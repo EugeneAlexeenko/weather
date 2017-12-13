@@ -1,11 +1,16 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
+import { removeCity, loadWeather } from '../actions';
 
 import './WeatherPreview.css';
-import {removeCity} from '../actions';
 
 class WeatherPreview extends Component {
+  componentDidMount() {
+    const { id, nameAPI, loadWeather } = this.props;
+    loadWeather(id, nameAPI);
+  }
+
   render () {
     return (
       <div className="weather-preview">
@@ -42,6 +47,9 @@ const mapDispatchToProps = (dispatch) => {
   return {
     removeWidget: (id) => {
       dispatch(removeCity(id));
+    },
+    loadWeather: (id, nameAPI) => {
+      dispatch(loadWeather(id, nameAPI));
     }
   }
 };
