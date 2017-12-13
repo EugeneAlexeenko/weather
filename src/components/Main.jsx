@@ -15,6 +15,7 @@ class Main extends Component {
               id={city.id}
               city={city.name}
               nameAPI={city.nameAPI}
+              weatherData={city.data}
             />
           </div>
         );

@@ -12,6 +12,20 @@ class WeatherPreview extends Component {
   }
 
   render () {
+    const { weatherData } = this.props;
+
+    console.log('weatherData', weatherData);
+    console.log('icon', weatherData && weatherData.weather[0].icon);
+
+    // const temperature = weatherData ?
+    //   Math.round(weatherData.main.temp) :
+    //   null;
+    const temperature = weatherData && Math.round(weatherData.main.temp);
+    const icon = weatherData && weatherData.weather[0].icon;
+
+    const imgUrl = process.env.PUBLIC_URL + `/img/icons_weather/icon_${icon}.svg`;
+
+
     return (
       <div className="weather-preview">
         <button
@@ -20,13 +34,20 @@ class WeatherPreview extends Component {
         >
           &#x2715;
         </button>
-        <div className="weather-preview__city-icon"></div>
+        <div
+          className="weather-preview__city-icon">
+        </div>
         <h3 className="weather-preview__name">{this.props.city}</h3>
         <div className="weather-preview__data-container">
-          <div className="weather-preview__temperature">-35
+          <div className="weather-preview__temperature">
+            {temperature}
             <div className="weather-preview__degree">&#176;C</div>
           </div>
-          <div className="weather-preview__weather-icon"></div>
+          <div
+            className="weather-preview__weather-icon"
+            style={{backgroundImage: `url(${imgUrl})`}}
+          >
+          </div>
         </div>
         <Link to={`/detail/${this.props.city}`}
           className="weather-preview__link"
@@ -41,6 +62,7 @@ class WeatherPreview extends Component {
     const { id, removeWidget } = this.props;
     removeWidget(id);
   }
+
 }
 
 const mapDispatchToProps = (dispatch) => {

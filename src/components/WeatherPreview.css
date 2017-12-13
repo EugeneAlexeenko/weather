@@ -9,7 +9,7 @@
     align-items: center;
     position: relative;
     border-radius: 25px;
-    box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.3);
+    box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.5);
     background: #01A7A6;
 }
 
@@ -44,24 +44,22 @@
     display: flex;
     flex-direction: row;
     justify-content: center;
-    outline: 1px solid black;
+    align-items: center;
 }
 
 .weather-preview__temperature {
     margin-bottom: 0;
     padding-right: 20px;
-    margin-right: 20px;
     position: relative;
     font-family: Roboto, sans-serif;
     font-weight: 400;
     font-size: 55px;
     color: #fff;
-    outline: 1px solid red;
 }
 
 .weather-preview__degree {
     position: absolute;
-    top: 0;
+    top: 7px;
     right: 0;
     font-family: Roboto, sans-serif;
     font-weight: 400;
@@ -71,8 +69,9 @@
 
 .weather-preview__weather-icon {
     width: 70px;
-    height: 40px;
-    outline: 1px dashed #fff;
+    height: 50px;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 .weather-preview__link {
