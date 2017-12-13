@@ -41,7 +41,7 @@ export default (citiesState = initialState, action) => {
         }
       });
     case LOAD_WEATHER_SUCCESS:
-      console.log('loading done: ', action.payload.weatherData);
+      // console.log('loading done: ', action.payload.weatherData);
       return citiesState.map((city) => {
         if (city.id !== +action.payload.id) {
           return city;

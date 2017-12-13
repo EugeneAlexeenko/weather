@@ -7,23 +7,20 @@ import './WeatherPreview.css';
 
 class WeatherPreview extends Component {
   componentDidMount() {
-    const { id, nameAPI, loadWeather } = this.props;
-    loadWeather(id, nameAPI);
+    const { id, loadWeather } = this.props;
+    loadWeather(id);
   }
 
   render () {
-    const { weatherData } = this.props;
+    const { cityName, weatherData } = this.props;
 
-    console.log('weatherData', weatherData);
-    console.log('icon', weatherData && weatherData.weather[0].icon);
+    const cityIcon = this.props.cityIcon || `default-city.svg`;
+    const cityIconUrl = process.env.PUBLIC_URL + `/img/icons_cities/${cityIcon}`;
 
-    // const temperature = weatherData ?
-    //   Math.round(weatherData.main.temp) :
-    //   null;
     const temperature = weatherData && Math.round(weatherData.main.temp);
-    const icon = weatherData && weatherData.weather[0].icon;
 
-    const imgUrl = process.env.PUBLIC_URL + `/img/icons_weather/icon_${icon}.svg`;
+    const weatherIcon = weatherData && weatherData.weather[0].icon;
+    const weatherIconUrl = process.env.PUBLIC_URL + `/img/icons_weather/icon_${weatherIcon}.svg`;
 
 
     return (
@@ -34,10 +31,15 @@ class WeatherPreview extends Component {
         >
           &#x2715;
         </button>
+
         <div
-          className="weather-preview__city-icon">
+          className="weather-preview__city-icon"
+          style={{backgroundImage: `url(${cityIconUrl})`}}
+        >
         </div>
-        <h3 className="weather-preview__name">{this.props.city}</h3>
+
+        <h3 className="weather-preview__name">{cityName}</h3>
+
         <div className="weather-preview__data-container">
           <div className="weather-preview__temperature">
             {temperature}
@@ -45,10 +47,11 @@ class WeatherPreview extends Component {
           </div>
           <div
             className="weather-preview__weather-icon"
-            style={{backgroundImage: `url(${imgUrl})`}}
+            style={{backgroundImage: `url(${weatherIconUrl})`}}
           >
           </div>
         </div>
+
         <Link to={`/detail/${this.props.city}`}
           className="weather-preview__link"
         >

@@ -13,8 +13,8 @@ class Main extends Component {
           <div key={city.id}>
             <WeatherPreview
               id={city.id}
-              city={city.name}
-              nameAPI={city.nameAPI}
+              cityName={city.name}
+              cityIcon={city.icon}
               weatherData={city.data}
             />
           </div>
@@ -28,7 +28,6 @@ class Main extends Component {
         <div>
           <Link to="/cities">Edit cities list</Link>
         </div>
-        <h2>Main page</h2>
         <AddCity />
         <div className="main__previews-container">
           {widgets}
