@@ -12,7 +12,7 @@ class WeatherPreview extends Component {
   }
 
   render () {
-    const { cityName, weatherData } = this.props;
+    const { id, cityName, weatherData } = this.props;
 
     const cityIcon = this.props.cityIcon || `default-city.svg`;
     const cityIconUrl = process.env.PUBLIC_URL + `/img/icons_cities/${cityIcon}`;
@@ -52,7 +52,7 @@ class WeatherPreview extends Component {
           </div>
         </div>
 
-        <Link to={`/detail/${this.props.city}`}
+        <Link to={`/detail/${id}`}
           className="weather-preview__link"
         >
           &#x2794;

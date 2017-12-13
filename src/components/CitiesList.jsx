@@ -20,7 +20,6 @@ class Cities extends Component {
     return (
       <div>
         <Link to="/">to main page</Link>
-        <h2>Edit cities list:</h2>
         <AddCity />
         <ul className="cities__list">
           {citiesList}

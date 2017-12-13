@@ -1,12 +1,14 @@
 .add-city__select  {
-  width: 50%;
-  height: 50px;
+  width: 460px;
+  height: 56px;
   margin: 0 auto;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
+  padding-left: 20px;
   display: block;
   font-family: Roboto, sans-serif;
   font-size: 25px;
   appearance: none;
   color: #ccc;
+  border: none;
 }
 

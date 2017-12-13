@@ -15,7 +15,7 @@ class App extends Component {
         <Switch>
           <Route exact path="/" component={Main} />
           <Route path="/cities" component={Cities} />
-          <Route path="/detail/:city" component={WeatherDetail} />
+          <Route path="/detail/:id" component={WeatherDetail} />
           <Route path="*" component={NotFound} />
         </Switch>
       </div>

@@ -48,9 +48,9 @@ body {
   background-position: center;
   background-size: cover;
 
-  outline: 3px solid green;
+  -outline: 3px solid green;
 }
 
 #root {
-  outline: 3px dashed red;
+  -outline: 3px dashed red;
 }

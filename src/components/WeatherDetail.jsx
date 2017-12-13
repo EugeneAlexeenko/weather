@@ -1,68 +1,53 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { loadWeather } from '../actions';
 
 class WeatherDetail extends Component {
-  state = {
-    city: this.props.match.params.city,
-    temperature: '',
-    fetching: true,
-  }
-
-  // когда компонент появится в DOM
   componentDidMount() {
-    //this.fetchZipCodeByIP();
-    this.fetchWeatherData(this.state.city);
+    const { id } = this.props.match.params;
+    loadWeather(id);
   }
 
   render () {
+    const { id } = this.props.match.params;
+    const city = this.props.cities.find( city => city.id === +id);
+
+    if (!city.data) {
+      return (
+        <div>loading...</div>
+      )
+    }
+
     return (
       <div className="weather-detail">
         <Link to="/">to main page</Link>
 
         <br/>
-        <h2>{this.props.match.params.city}</h2>
-        City: {this.state.city}
+        City: {city.name}
         <br/>
-        Temperature: {this.state.temperature}
+        Temperature: {city.data.main.temp}
+        <br/>
+        Humidity: {city.data.main.humidity}
+        <br/>
+        Pressure: {city.data.main.pressure}
       </div>
     );
   }
-
-  // get city location by ip
-  fetchZipCodeByIP = () => {
-    fetch(`https://freegeoip.net/json/`)
-    //.then(response => response.json())
-      .then((response) => {
-        console.log('fetching ip from https://freegeoip.net');
-        return response.json();
-      })
-      .then((data) => {
-        console.log(data);
-        this.fetchWeatherData( data.city );
-      })
-      .catch((error) => {
-        console.log(error => console.log(error));
-      })
-  };
-
-  // get weather data by zip code
-  fetchWeatherData = (city) => {
-    const baseUrl = `http://api.openweathermap.org`;
-    const path = `/data/2.5/weather`;
-    const appId = `a8ea301f97eff232520187299d334108`;
-    const query = `units=metric&lang=ru&appid=${appId}`;
-
-    fetch(`${baseUrl}${path}?q=${city}&${query}`)
-      .then(response => response.json())
-      .then(data => {
-        this.setState({
-          city: data.name,
-          temperature: Math.round(data.main.temp),
-          fetching: false
-        });
-      })
-      .catch(error => console.error(error));
-  };
 }
 
-export default WeatherDetail;
+const mapStateToProps = (state) => {
+  return {
+    cities: state.cities
+  }
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    loadWeather: (id) => {
+      dispatch(loadWeather(id));
+    }
+  }
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(WeatherDetail);
