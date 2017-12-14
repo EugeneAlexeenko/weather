@@ -27,7 +27,7 @@ export function loadWeather(id) {
       payload: { id }
     });
 
-    const baseUrl = `http://api.openweathermap.org`;
+    const baseUrl = `https://api.openweathermap.org`;
     const path = `/data/2.5/weather`;
     const appId = `a8ea301f97eff232520187299d334108`;
     const params = `units=metric&appid=${appId}`;
