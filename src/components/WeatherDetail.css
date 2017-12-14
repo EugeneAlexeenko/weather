@@ -1,0 +1,17 @@
+.weather {
+    display: flex;
+    flex-direction: column;
+}
+.weather-detail__background {
+    height: 515px;
+    flex-grow: 1;
+    outline: 1px dashed red;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.weather-detail__information {
+    background: #01A7A6;
+
+}

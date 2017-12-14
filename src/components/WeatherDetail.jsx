@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { loadWeather } from '../actions';
+import './WeatherDetail.css';
 
 class WeatherDetail extends Component {
   componentDidMount() {
@@ -15,22 +16,39 @@ class WeatherDetail extends Component {
 
     if (!city.data) {
       return (
-        <div>loading...</div>
+        <div className="weather-detail">
+          <div
+            className="weather-detail__background"
+            style={{backgroundImage: `url(${process.env.PUBLIC_URL}/img/bg_cities/default-city.jpg)`}}
+          >
+          </div>
+          <div>loading...</div>
+        </div>
       )
     }
 
+    const bgUrl = (city.bgImage) ?
+      process.env.PUBLIC_URL + `/img/bg_cities/${city.bgImage}` :
+      process.env.PUBLIC_URL + `/img/bg_cities/default-city.jpg`;
+
     return (
       <div className="weather-detail">
-        <Link to="/">to main page</Link>
+        <div
+          className="weather-detail__background"
+          style={{backgroundImage: `url(${bgUrl})`}}
+        >
+          <Link to="/">to main page</Link>
+        </div>
 
-        <br/>
-        City: {city.name}
-        <br/>
-        Temperature: {city.data.main.temp}
-        <br/>
-        Humidity: {city.data.main.humidity}
-        <br/>
-        Pressure: {city.data.main.pressure}
+        <div className="weather-detail__information">
+          City: {city.name}
+          <br/>
+          Temperature: {city.data.main.temp}
+          <br/>
+          Humidity: {city.data.main.humidity}
+          <br/>
+          Pressure: {city.data.main.pressure}
+        </div>
       </div>
     );
   }
