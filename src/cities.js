@@ -12,7 +12,7 @@ export default [
     name: 'Beijing',
     country: 'China',
     icon: 'beijing.svg',
-    bgImage: 'athens.jpg',
+    bgImage: 'beijing.jpg',
     isVisible: false
   },
   {
