@@ -1,6 +1,6 @@
 .weather-preview {
     padding-top: 18px;
-    padding-bottom: 18px;
+    padding-bottom: 32px;
     width: 200px;
     height: 250px;
     margin: 32px 30px;
@@ -15,10 +15,11 @@
 
 .weather-preview__btn-close {
     position: absolute;
-    top: 5px;
     right: 5px;
-    font-size: 24px;
+    top: 5px;
     color: #fff;
+    font-size: 25px;
+    background: url(../img/icons/close.svg);
     background: transparent;
     border: none;
 }
@@ -40,6 +41,7 @@
     font-family: Roboto, sans-serif;
     font-size: 20px;
     font-weight: 400;
+    letter-spacing: 1px;
     color: #fff;
 }
 
@@ -79,11 +81,12 @@
 }
 
 .weather-preview__link {
+    width: 20px;
+    height: 20px;
     position: absolute;
-    right: 5px;
-    bottom: 5px;
-    text-decoration: none;
-    font-size: 20px;
-    color: #fff;
+    right: 12px;
+    bottom: 12px;
+    background: url(../img/icons/arrow.svg);
+    transform: rotate(180deg);
 }
 

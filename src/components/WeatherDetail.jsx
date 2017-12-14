@@ -21,7 +21,11 @@ class WeatherDetail extends Component {
             className="weather-detail__header"
             style={{backgroundImage: `url(${process.env.PUBLIC_URL}/img/bg_cities/default-city.jpg)`}}
           >
-            <Link to="/">to main page</Link>
+            <Link
+              to="/"
+              className="link-back"
+            >
+            </Link>
           </div>
           <div>loading...</div>
         </div>
@@ -77,9 +81,8 @@ class WeatherDetail extends Component {
           <div className="weather-detail__container">
             <Link
               to="/"
-              className="link"
+              className="link-back"
             >
-              to main page
             </Link>
 
             <div className="location">

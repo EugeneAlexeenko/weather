@@ -55,7 +55,6 @@ class WeatherPreview extends Component {
         <Link to={`/detail/${id}`}
           className="weather-preview__link"
         >
-          &#x2794;
         </Link>
       </div>
     );

@@ -13,7 +13,7 @@ class App extends Component {
   render() {
     return (
       <div className="app"
-           style={{backgroundImage: `url(${bg})` }}
+           style={{backgroundImage: `url(${bg})`}}
       >
         <Switch>
           <Route exact path="/" component={Main} />

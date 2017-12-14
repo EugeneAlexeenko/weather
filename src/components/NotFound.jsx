@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-export default function WeatherDetail() {
+export default function NotFound() {
   return (
     <div className="weather-detail">
       <Link to="/">to main page</Link>

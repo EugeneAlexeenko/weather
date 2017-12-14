@@ -1,0 +1,11 @@
+.link-settings {
+  display: block;
+  width: 36px;
+  height: 35px;
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  z-index: 5;
+  background-image: url(../img/icons/settings_gears.svg);
+  background-repeat: no-repeat;
+}

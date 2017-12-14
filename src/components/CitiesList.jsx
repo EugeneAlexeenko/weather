@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
 import AddCity from './AddCity';
 import CitiesItem from './CitiesItem';
+import LinkReturn from './LinkReturn';
 import './CitiesList.css';
 
 class Cities extends Component {
@@ -18,8 +18,8 @@ class Cities extends Component {
       return null;
     });
     return (
-      <div>
-        <Link to="/">to main page</Link>
+      <div className="cities__container">
+        <LinkReturn to="/" />
         <AddCity />
         <ul className="cities__list">
           {citiesList}

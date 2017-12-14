@@ -1,6 +1,15 @@
+.main__container {
+  padding-top: 40px;
+  max-width: 1280px;
+  margin: 0 auto;
+  position: relative;
+
+  -outline: 1px dashed #fff;
+}
+
 .main__previews-container {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    flex-wrap: wrap;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
 }

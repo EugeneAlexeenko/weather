@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
 import AddCity from './AddCity';
 import WeatherPreview from './WeatherPreview';
+import LinkSettings from './LinkSettings';
 import './Main.css';
 
 class Main extends Component {
@@ -25,12 +25,12 @@ class Main extends Component {
 
     return (
       <div className="main">
-        <div>
-          <Link to="/cities">Edit cities list</Link>
-        </div>
-        <AddCity />
-        <div className="main__previews-container">
-          {widgets}
+        <div className="main__container">
+          <LinkSettings to="cities"/>
+          <AddCity />
+          <div className="main__previews-container">
+            {widgets}
+          </div>
         </div>
       </div>
     );
