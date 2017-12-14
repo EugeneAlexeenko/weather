@@ -6,12 +6,15 @@ import Cities from './CitiesList';
 import NotFound from './NotFound';
 
 import './App.css';
+import bg from '../img/bg_main.jpg';
 
 class App extends Component {
 
   render() {
     return (
-      <div className="app">
+      <div className="app"
+           style={{backgroundImage: `url(${bg})` }}
+      >
         <Switch>
           <Route exact path="/" component={Main} />
           <Route path="/cities" component={Cities} />
