@@ -18,9 +18,10 @@ class WeatherDetail extends Component {
       return (
         <div className="weather-detail">
           <div
-            className="weather-detail__background"
+            className="weather-detail__header"
             style={{backgroundImage: `url(${process.env.PUBLIC_URL}/img/bg_cities/default-city.jpg)`}}
           >
+            <Link to="/">to main page</Link>
           </div>
           <div>loading...</div>
         </div>
@@ -33,22 +34,56 @@ class WeatherDetail extends Component {
 
     return (
       <div className="weather-detail">
-        <div
-          className="weather-detail__background"
+        <header
+          className="weather-detail__header"
           style={{backgroundImage: `url(${bgUrl})`}}
         >
-          <Link to="/">to main page</Link>
-        </div>
+          <div className="weather-detail__container">
+            <Link
+              to="/"
+              className="link"
+            >
+              to main page
+            </Link>
 
-        <div className="weather-detail__information">
-          City: {city.name}
-          <br/>
-          Temperature: {city.data.main.temp}
-          <br/>
-          Humidity: {city.data.main.humidity}
-          <br/>
-          Pressure: {city.data.main.pressure}
-        </div>
+            <div className="location">
+
+              <div className="location__city-container">
+                <div className="location__city">
+                  {city.name}
+                </div>
+                <div className="location__country">
+                  {city.country}
+                </div>
+              </div>
+
+              <div className="location__date-container">
+                <div className="location__date-item">
+                friday
+                </div>
+                <div className="location__date-item">
+                15 may
+                </div>
+                <div className="location__date-item">
+                12:24 am
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+        </header>
+
+        <main className="weather-detail__main">
+          <div className="weather-detail__container">
+            .weather-detail
+            Temperature: {city.data.main.temp}
+            <br/>
+            Humidity: {city.data.main.humidity}
+            <br/>
+            Pressure: {city.data.main.pressure}
+          </div>
+        </main>
       </div>
     );
   }

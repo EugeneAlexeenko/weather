@@ -1,17 +1,115 @@
-.weather {
+.weather-detail {
+    height: 100vh;
     display: flex;
     flex-direction: column;
+
+    outline: 2px dashed red;
 }
-.weather-detail__background {
+.weather-detail__header {
+    padding-top: 50px;
     height: 515px;
-    flex-grow: 1;
-    outline: 1px dashed red;
+    position: relative;
+    z-index: 1;
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
 }
 
-.weather-detail__information {
-    background: #01A7A6;
+/*  Todo: fix background*/
+.weather-detail__header:before {
+    content: '';
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    pointer-events: none;
+    background-image: linear-gradient(to bottom,
+      #000 -20%,
+      transparent 50%);
+}
 
+.weather-detail__container {
+    max-width: 1280px;
+    margin: 0 auto;
+
+    outline: 2px dashed #fff;
+}
+
+.location {
+    min-width: 230px;
+    display: flex;
+    position: relative;
+    z-index: 3;
+    flex-direction: column;
+    align-items: center;
+}
+
+.location__city-container {
+    margin-bottom: 25px;
+    padding-left: 55px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.location__city-container:before {
+  content: '';
+  width: 36px;
+  height: 50px;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  background-image: url('../img/icons/flag.svg');
+}
+
+.location__city {
+    text-align: center;
+    font-family: Roboto, sans-serif;
+    font-size: 34px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    color: #fff;
+}
+
+.location__country {
+    text-align: center;
+    font-family: Roboto, sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 2px;
+    color: #fff;
+}
+
+.location__date-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.location__date-item {
+    padding: 0 15px;
+    font-family: Roboto, sans-serif;
+    font-size: 16px;
+    color: #fff;
+    border-right: 1px solid #fff
+}
+
+.location__date-item:last-child {
+    border-right: none;
+}
+
+.weather-detail__main {
+    -flex-grow: 1;
+    display: flex;
+    flex-direction: row;
+    background: #01A7A6;
+}
+
+/*/////////
+TODO: link should be moved
+////////*/
+
+.link {
+    color: #fff;
 }
