@@ -1,9 +1,9 @@
 import React from 'react';
 import './DateInfo.css';
 
-export default function DateInfo() {
+const DateInfo = () => {
 
-  function getDate(){
+  const getDate = () => {
     const dateNow = new Date();
     const timeOptions = {
       hour: '2-digit',
@@ -23,7 +23,7 @@ export default function DateInfo() {
       date: dateNow.toLocaleDateString('en-US', dateOptions).toUpperCase(),
       time: dateNow.toLocaleTimeString('en-US', timeOptions).toLowerCase()
     }
-  }
+  };
 
   return (
     <div className="date-info__container">
@@ -38,6 +38,6 @@ export default function DateInfo() {
       </div>
     </div>
   );
-}
+};
 
-
+export default DateInfo;

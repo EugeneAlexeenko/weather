@@ -1,0 +1,46 @@
+.location-info {
+  min-width: 230px;
+  display: flex;
+  position: relative;
+  z-index: 3;
+  flex-direction: column;
+  align-items: center;
+}
+
+.location-info__city-container {
+  margin-bottom: 25px;
+  padding-left: 55px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.location-info__city-container:before {
+  content: '';
+  width: 36px;
+  height: 50px;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  background-image: url('../img/icons/flag.svg');
+}
+
+.location-info__city {
+  margin: 0;
+  text-align: center;
+  font-family: Roboto, sans-serif;
+  font-size: 34px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  color: #fff;
+}
+
+.location-info__country {
+  margin: 0;
+  text-align: center;
+  font-family: Roboto, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 2px;
+  color: #fff;
+}

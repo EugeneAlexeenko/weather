@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { loadWeather } from '../actions';
-import DateInfo from './DateInfo';
+import LocationInfo from './LocationInfo';
 import './WeatherDetail.css';
 
 class WeatherDetail extends Component {
@@ -86,20 +86,7 @@ class WeatherDetail extends Component {
             >
             </Link>
 
-            <div className="location">
-
-              <div className="location__city-container">
-                <h2 className="location__city">
-                  {city.name}
-                </h2>
-                <h3 className="location__country">
-                  {city.country}
-                </h3>
-              </div>
-
-              <DateInfo />
-
-            </div>
+            <LocationInfo city={city}/>
 
           </div>
         </header>
