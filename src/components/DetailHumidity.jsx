@@ -1,9 +1,8 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import './DetailHumidity.css';
 
 const DetailHumidity = ({city}) => {
-
-
   return (
     <div className="detail-humidity__container">
       <i className="detail-humidity__icon"></i>
@@ -15,6 +14,10 @@ const DetailHumidity = ({city}) => {
       </p>
     </div>
   )
+};
+
+DetailHumidity.propTypes = {
+  city: PropTypes.object.isRequired
 };
 
 export default DetailHumidity;

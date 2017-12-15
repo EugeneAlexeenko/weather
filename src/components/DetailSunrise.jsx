@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import './DetailSunrise.css';
 
 const DetailSunrise = ({city}) => {
@@ -28,5 +29,10 @@ const DetailSunrise = ({city}) => {
     </div>
   )
 };
+
+DetailSunrise.propTypes = {
+  city: PropTypes.object.isRequired
+};
+
 
 export default DetailSunrise;

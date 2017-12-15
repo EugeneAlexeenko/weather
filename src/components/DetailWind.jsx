@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import './DetailWind.css';
 
 const DetailWind = ({city}) => {
@@ -33,6 +34,10 @@ const DetailWind = ({city}) => {
 
     </div>
   )
+};
+
+DetailWind.propTypes = {
+  city: PropTypes.object.isRequired
 };
 
 export default DetailWind;

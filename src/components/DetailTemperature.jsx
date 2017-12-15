@@ -1,11 +1,12 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import './DetailTemperature.css';
 
 const DetailTemperature = ({city}) => {
 
   const weatherIcon = (city.data.weather[0].icon) ?
     city.data.weather[0].icon :
-    `default-weather.svg`;
+    `default-weather`;
 
   const weatherIconUrl = process.env.PUBLIC_URL +
     `/img/icons_weather/icon_${weatherIcon}.svg`;
@@ -32,6 +33,10 @@ const DetailTemperature = ({city}) => {
       </div>
     </div>
   )
+};
+
+DetailTemperature.propTypes = {
+  city: PropTypes.object.isRequired
 };
 
 export default DetailTemperature;
