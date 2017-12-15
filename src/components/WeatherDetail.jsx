@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { loadWeather } from '../actions';
 import LocationInfo from './LocationInfo';
+import DetailTemperature from './DetailTemperature';
 import './WeatherDetail.css';
 
 class WeatherDetail extends Component {
@@ -38,16 +39,6 @@ class WeatherDetail extends Component {
       process.env.PUBLIC_URL + `/img/bg_cities/default-city.jpg`;
 
 
-    const weatherIcon = (city.data.weather[0].icon) ?
-      city.data.weather[0].icon :
-      `default-weather.svg`;
-    const weatherIconUrl = process.env.PUBLIC_URL + `/img/icons_weather/icon_${weatherIcon}.svg`;
-
-    const weatherDescription = (city.data.weather[0].description) ?
-      city.data.weather[0].description :
-      ``;
-
-    const temperature = Math.round(city.data.main.temp);
 
     function degToCompass(num) {
       const value = Math.floor((num / 22.5) + 0.5);
@@ -94,28 +85,16 @@ class WeatherDetail extends Component {
         <main className="weather-detail__main">
           <div className="weather-detail__container">
 
-          {/*temperature*/}
+
           <div className="weather-detail__features">
+
+            {/*temperature*/}
             <div className="weather-detail__features-item
                             weather-detail__temperature">
               <h3 className="weather-detail__feature-title">
                 Temperature
               </h3>
-              <div className="temperature__container">
-                <div className="temperature__number">
-                  {temperature}
-                </div>
-                <div className="temperature__extra">
-                  <i
-                    className="temperature__icon"
-                    style={{backgroundImage: `url(${weatherIconUrl})`}}
-                  >
-                  </i>
-                  <p className="temperature__description">
-                    {weatherDescription}
-                  </p>
-                </div>
-              </div>
+              <DetailTemperature city={city} />
             </div>
 
            {/*wind */}
