@@ -1,0 +1,18 @@
+.date-info__container {
+  margin-bottom: 30px;
+  display: flex;
+  flex-direction: row;
+}
+
+.date-info__item {
+  padding: 0 15px;
+  font-family: Roboto, sans-serif;
+  font-size: 16px;
+  color: #fff;
+  border-right: 1px solid #fff
+}
+
+.date-info__item:last-child {
+  border-right: none;
+}
+

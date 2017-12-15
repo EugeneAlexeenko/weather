@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { loadWeather } from '../actions';
+import DateInfo from './DateInfo';
 import './WeatherDetail.css';
 
 class WeatherDetail extends Component {
@@ -35,32 +36,6 @@ class WeatherDetail extends Component {
     const bgUrl = (city.bgImage) ?
       process.env.PUBLIC_URL + `/img/bg_cities/${city.bgImage}` :
       process.env.PUBLIC_URL + `/img/bg_cities/default-city.jpg`;
-
-    function getDate(){
-      const dateNow = new Date();
-      const timeOptions = {
-        hour: '2-digit',
-        minute: '2-digit',
-        hour12: true
-      };
-      const dayOptions = {
-        weekday: 'short'
-      };
-      const dateOptions = {
-        month: 'short',
-          day: 'numeric'
-      };
-
-      return {
-        day: dateNow.toLocaleDateString('en-US', dayOptions).toUpperCase(),
-        date: dateNow.toLocaleDateString('en-US', dateOptions).toUpperCase(),
-        time: dateNow.toLocaleTimeString('en-US', timeOptions).toLowerCase()
-      }
-    }
-
-    const day = getDate().day.toUpperCase();
-    const date = getDate().date.toUpperCase();
-    const time = getDate().time.toLowerCase();
 
 
     const weatherIcon = (city.data.weather[0].icon) ?
@@ -122,17 +97,7 @@ class WeatherDetail extends Component {
                 </h3>
               </div>
 
-              <div className="location__date-container">
-                <div className="location__date-item">
-                  {day}
-                </div>
-                <div className="location__date-item">
-                  {date}
-                </div>
-                <div className="location__date-item">
-                  {time}
-                </div>
-              </div>
+              <DateInfo />
 
             </div>
 
