@@ -2,12 +2,10 @@
   height: 100vh;
   display: flex;
   flex-direction: column;
-
-  -outline: 2px dashed red;
 }
+
 .weather-detail__header {
   padding-top: 50px;
-  -height: 515px;
   height: 600px;
   position: relative;
   z-index: 1;
@@ -36,6 +34,16 @@
   margin: 0 auto;
 
   -outline: 2px dashed #fff;
+}
+
+.weather-detail__error-message {
+  font-family: Roboto, sans-serif;
+  position: relative;
+  z-index: 5;
+  font-size: 36px;
+  font-weight: 400;
+  text-align: center;
+  color: #fff;
 }
 
 

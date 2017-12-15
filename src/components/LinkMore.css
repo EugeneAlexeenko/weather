@@ -1,0 +1,10 @@
+.link-more {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  right: 12px;
+  bottom: 12px;
+  background: url(../img/icons/arrow.svg);
+  transform: rotate(180deg);
+}
+

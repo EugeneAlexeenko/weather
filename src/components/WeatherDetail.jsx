@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { loadWeather } from '../actions';
+import LinkReturn from './LinkReturn';
 import LocationInfo from './LocationInfo';
 import DetailTemperature from './DetailTemperature';
 import DetailWind from "./DetailWind";
@@ -22,17 +23,12 @@ class WeatherDetail extends Component {
     if (!city.data) {
       return (
         <div className="weather-detail">
-          <div
-            className="weather-detail__header"
-            style={{backgroundImage: `url(${process.env.PUBLIC_URL}/img/bg_cities/default-city.jpg)`}}
-          >
-            <Link
-              to="/"
-              className="link-back"
-            >
-            </Link>
+          <LinkReturn to="/"/>
+          <div className="weather-detail__container">
+            <p className="weather-detail__error-message">
+              Sorry, can't get data for yor city...
+            </p>
           </div>
-          <div>loading...</div>
         </div>
       )
     }
@@ -41,10 +37,9 @@ class WeatherDetail extends Component {
       process.env.PUBLIC_URL + `/img/bg_cities/${city.bgImage}` :
       process.env.PUBLIC_URL + `/img/bg_cities/default-city.jpg`;
 
-
-
     return (
       <div className="weather-detail">
+
         <header
           className="weather-detail__header"
           style={{backgroundImage: `url(${bgUrl})`}}
@@ -57,7 +52,6 @@ class WeatherDetail extends Component {
             </Link>
             <LocationInfo city={city}/>
           </div>
-
         </header>
 
         <main className="weather-detail__main">
@@ -95,6 +89,7 @@ class WeatherDetail extends Component {
             </div>
           </div>
         </main>
+
       </div>
     );
   }

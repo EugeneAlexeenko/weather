@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { removeCity, loadWeather } from '../actions';
+import LinkMore from "./LinkMore";
 
 import './WeatherPreview.css';
 
@@ -52,10 +52,8 @@ class WeatherPreview extends Component {
           </div>
         </div>
 
-        <Link to={`/detail/${id}`}
-          className="weather-preview__link"
-        >
-        </Link>
+        <LinkMore to={`/detail/${id}`}/>
+
       </div>
     );
   }
