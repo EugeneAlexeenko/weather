@@ -36,6 +36,33 @@ class WeatherDetail extends Component {
       process.env.PUBLIC_URL + `/img/bg_cities/${city.bgImage}` :
       process.env.PUBLIC_URL + `/img/bg_cities/default-city.jpg`;
 
+    function getDate(){
+      const dateNow = new Date();
+      const timeOptions = {
+        hour: '2-digit',
+        minute: '2-digit',
+        hour12: true
+      };
+      const dayOptions = {
+        weekday: 'short'
+      };
+      const dateOptions = {
+        month: 'short',
+          day: 'numeric'
+      };
+
+      return {
+        day: dateNow.toLocaleDateString('en-US', dayOptions).toUpperCase(),
+        date: dateNow.toLocaleDateString('en-US', dateOptions).toUpperCase(),
+        time: dateNow.toLocaleTimeString('en-US', timeOptions).toLowerCase()
+      }
+    }
+
+    const day = getDate().day.toUpperCase();
+    const date = getDate().date.toUpperCase();
+    const time = getDate().time.toLowerCase();
+
+
     const weatherIcon = (city.data.weather[0].icon) ?
       city.data.weather[0].icon :
       `default-weather.svg`;
@@ -56,7 +83,6 @@ class WeatherDetail extends Component {
     const windSpeed = Math.round(city.data.wind.speed);
 
     const windDirection = degToCompass(city.data.wind.deg);
-    console.log(windDirection);
 
     const formatTime = (s) => {
       const date = new Date(s * 1000);
@@ -98,13 +124,13 @@ class WeatherDetail extends Component {
 
               <div className="location__date-container">
                 <div className="location__date-item">
-                friday
+                  {day}
                 </div>
                 <div className="location__date-item">
-                15 may
+                  {date}
                 </div>
                 <div className="location__date-item">
-                12:24 am
+                  {time}
                 </div>
               </div>
 
