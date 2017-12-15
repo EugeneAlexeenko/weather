@@ -1,4 +1,4 @@
-.temperature__container {
+.detail-temperature__container {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -6,7 +6,7 @@
   -outline: 1px dashed #fff;
 }
 
-.temperature__number {
+.detail-temperature__number {
   font-family: Roboto, sans-serif;
   font-size: 160px;
   line-height: 125px;
@@ -14,7 +14,7 @@
   color: #fff;
 }
 
-.temperature__extra {
+.detail-temperature__extra {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -22,7 +22,7 @@
   -outline: 1px dashed #fff;
 }
 
-.temperature__icon {
+.detail-temperature__icon {
   width: 142px;
   height: 100px;
   background-repeat: no-repeat;
@@ -30,14 +30,14 @@
   background-position: top;
 }
 
-.temperature__description {
+.detail-temperature__description {
   font-family: Roboto, sans-serif;
   font-size: 20px;
   font-weight: 400;
   color: #fff;
 }
 
-.temperature__description:first-letter {
+.detail-temperature__description:first-letter {
   text-transform: capitalize;
 }
 

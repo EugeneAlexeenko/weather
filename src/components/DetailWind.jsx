@@ -13,22 +13,24 @@ const DetailWind = ({city}) => {
   const windDirection = degToCompass(city.data.wind.deg);
 
   return (
-    <div>
-      <div className="wind__container">
-        <div className="wind__speed">
+    <div className="detail-wind__container">
+
+      <div className="detail-wind__speed-container">
+        <div className="detail-wind__speed">
           {windSpeed}
           <span
-            className="wind__speed-dimension"
+            className="detail-wind__speed-dimension"
           >
             m/s
           </span>
         </div>
-        <i className="wind__icon"></i>
+        <i className="detail-wind__icon"></i>
       </div>
 
-      <p className="wind__direction">
-      Direction: {windDirection}
+      <p className="detail-wind__direction">
+        Direction: {windDirection}
       </p>
+
     </div>
   )
 };

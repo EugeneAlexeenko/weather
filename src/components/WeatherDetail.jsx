@@ -4,8 +4,10 @@ import { connect } from 'react-redux';
 import { loadWeather } from '../actions';
 import LocationInfo from './LocationInfo';
 import DetailTemperature from './DetailTemperature';
-import DetailWind from "./DetaiWind";
+import DetailWind from "./DetailWind";
 import './WeatherDetail.css';
+import DetailHumidity from "./DetailHumidity";
+import DetailSunrise from "./DetailSunrise";
 
 class WeatherDetail extends Component {
   componentDidMount() {
@@ -39,20 +41,6 @@ class WeatherDetail extends Component {
       process.env.PUBLIC_URL + `/img/bg_cities/${city.bgImage}` :
       process.env.PUBLIC_URL + `/img/bg_cities/default-city.jpg`;
 
-
-
-    const formatTime = (s) => {
-      const date = new Date(s * 1000);
-      const options = {
-        hour: '2-digit',
-        minute: '2-digit',
-        hour12: true
-      };
-      return date.toLocaleTimeString('en-US', options);
-    };
-
-    const sunrise = formatTime(city.data.sys.sunrise);
-    const sunset = formatTime(city.data.sys.sunset);
 
 
     return (
@@ -91,34 +79,18 @@ class WeatherDetail extends Component {
                 <DetailWind city={city}/>
               </div>
 
-             {/*humidity */}
-              <div className="weather-detail__features-item
-                              weather-detail__humidity">
+              <div className="weather-detail__features-item ">
                 <h3 className="weather-detail__feature-title">
                   Humidity
                 </h3>
-                <i className="weather-detail__humidity-icon"></i>
-                <p className="weather-detail__text">
-                  Humidity: {city.data.main.humidity} %
-                </p>
-                <p className="weather-detail__text">
-                  Pressure: {city.data.main.pressure} hPa
-                </p>
+                <DetailHumidity city={city}/>
               </div>
 
-              {/*sunrise/sunset*/}
-              <div className="weather-detail__features-item
-                              weather-detail__sunrise">
+              <div className="weather-detail__features-item ">
                 <h3 className="weather-detail__feature-title">
                   Sunrise/Sunset
                 </h3>
-                <i className="weather-detail__sunrise-icon"></i>
-                <p className="weather-detail__text">
-                  Sunrise: {sunrise}
-                </p>
-                <p className="weather-detail__text">
-                  Sunset: {sunset}
-                </p>
+                <DetailSunrise city={city}/>
               </div>
             </div>
           </div>

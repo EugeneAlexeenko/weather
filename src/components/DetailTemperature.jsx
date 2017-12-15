@@ -16,17 +16,17 @@ const DetailTemperature = ({city}) => {
 
   const temperature = Math.round(city.data.main.temp);
   return (
-    <div className="temperature__container">
-      <div className="temperature__number">
+    <div className="detail-temperature__container">
+      <div className="detail-temperature__number">
         {temperature}
       </div>
-      <div className="temperature__extra">
+      <div className="detail-temperature__extra">
         <i
-          className="temperature__icon"
+          className="detail-temperature__icon"
           style={{backgroundImage: `url(${weatherIconUrl})`}}
         >
         </i>
-        <p className="temperature__description">
+        <p className="detail-temperature__description">
           {weatherDescription}
         </p>
       </div>

@@ -81,34 +81,6 @@
   background: #00807F;
 }
 
-.weather-detail__humidity-icon {
-  margin-bottom: 10px;
-  width: 56px;
-  height: 66px;
-  display: block;
-  background-image: url(../img/icons/humidity.svg);
-  background-repeat: no-repeat;
-}
-
-.weather-detail__sunrise-icon {
-  margin-bottom: 10px;
-  width: 88px;
-  height: 82px;
-  display: block;
-  background-image: url(../img/icons/sunrise_sunset.svg);
-  background-repeat: no-repeat;
-}
-
-.weather-detail__text {
-  margin: 0;
-  margin-bottom: 10px;
-  font-family: Roboto, sans-serif;
-  font-size: 20px;
-  font-weight: 400;
-  color: #fff;
-}
-
-
 .link-back {
   display: block;
   width: 30px;

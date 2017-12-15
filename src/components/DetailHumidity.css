@@ -1,0 +1,25 @@
+.detail-humidity__container {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.detail-humidity__icon {
+  margin-bottom: auto;
+  width: 56px;
+  height: 66px;
+  display: block;
+  background-image: url(../img/icons/humidity.svg);
+  background-repeat: no-repeat;
+}
+
+.detail-humidity__text {
+  margin: 0;
+  margin-bottom: 10px;
+  font-family: Roboto, sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  color: #fff;
+}

@@ -1,4 +1,10 @@
-.wind__container {
+.detail-wind__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.detail-wind__speed-container {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -6,7 +12,7 @@
   -outline: 1px solid red;
 }
 
-.wind__speed {
+.detail-wind__speed {
   display: block;
   margin: 0;
   padding: 0;
@@ -21,7 +27,7 @@
   -outline: 1px dashed green;
 }
 
-.wind__speed-dimension {
+.detail-wind__speed-dimension {
   margin: 0;
   position: absolute;
   top: -70px;
@@ -32,7 +38,7 @@
   color: #fff;
 }
 
-.wind__icon {
+.detail-wind__icon {
   margin-left: 20px;
   margin-bottom: 10px;
   width: 110px;
@@ -44,7 +50,7 @@
   -outline: 1px dashed blue;
 }
 
-.wind__direction {
+.detail-wind__direction {
   margin: 0;
   font-family: Roboto, sans-serif;
   font-size: 20px;
