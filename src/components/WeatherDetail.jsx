@@ -1,14 +1,13 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { loadWeather } from '../actions';
 import LinkReturn from './LinkReturn';
 import LocationInfo from './LocationInfo';
 import DetailTemperature from './DetailTemperature';
 import DetailWind from "./DetailWind";
-import './WeatherDetail.css';
 import DetailHumidity from "./DetailHumidity";
 import DetailSunrise from "./DetailSunrise";
+import './WeatherDetail.css';
 
 class WeatherDetail extends Component {
   componentDidMount() {
@@ -44,12 +43,8 @@ class WeatherDetail extends Component {
           className="weather-detail__header"
           style={{backgroundImage: `url(${bgUrl})`}}
         >
+          <LinkReturn to="/"/>
           <div className="weather-detail__container">
-            <Link
-              to="/"
-              className="link-back"
-            >
-            </Link>
             <LocationInfo city={city}/>
           </div>
         </header>

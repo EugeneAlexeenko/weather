@@ -1,6 +1,7 @@
 .weather-detail {
   height: 100vh;
   display: flex;
+  position: relative;
   flex-direction: column;
 }
 
@@ -25,14 +26,13 @@
   left: 0;
   pointer-events: none;
   background-image: linear-gradient(to bottom,
-    #000 -20%,
-    transparent 50%);
+    #000 -10%,
+    transparent 80%);
 }
 
 .weather-detail__container {
   max-width: 1280px;
   margin: 0 auto;
-
   -outline: 2px dashed #fff;
 }
 

@@ -9,3 +9,12 @@
   background-image: url(../img/icons/settings_gears.svg);
   background-repeat: no-repeat;
 }
+
+@media screen and (max-width: 500px) {
+  .link-settings {
+    width: 30px;
+    height: 30px;
+    top: 20px;
+    right: 10px;
+  }
+}

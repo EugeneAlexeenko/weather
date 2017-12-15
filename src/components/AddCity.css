@@ -9,6 +9,14 @@
   font-size: 25px;
   appearance: none;
   color: #ccc;
+  background: #fff;
   border: none;
+}
+
+@media screen and (max-width: 600px) {
+  .add-city__select {
+    margin-top: 25px;
+    width: 80%
+  }
 }
 

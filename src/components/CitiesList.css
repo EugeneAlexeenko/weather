@@ -1,6 +1,8 @@
 .cities__container {
   max-width: 1280px;
+  height: 100vh;
   margin: 0 auto;
+  padding-top: 30px;
   position: relative;
 }
 
@@ -8,5 +10,11 @@
   margin: 0;
   padding: 0;
   list-style: none;
+}
+
+@media screen and (max-width: 600px) {
+  .cities__container {
+    padding-top: 30px;
+  }
 }
 
