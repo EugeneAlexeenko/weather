@@ -81,60 +81,6 @@
   background: #00807F;
 }
 
-.wind__container {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-
-  -outline: 1px solid red;
-}
-
-.wind__speed {
-  display: block;
-  margin: 0;
-  padding: 0;
-  padding-right: 20px;
-  position: relative;
-  font-family: Roboto, sans-serif;
-  font-size: 160px;
-  line-height: 125px;
-  font-weight: 400;
-  color: #fff;
-
-  -outline: 1px dashed green;
-}
-
-.wind__speed-dimension {
-  margin: 0;
-  position: absolute;
-  top: -70px;
-  right: -13px;
-  font-family: Roboto, sans-serif;
-  font-size: 20px;
-  font-weight: 400;
-  color: #fff;  
-}
-
-.wind__icon {
-  margin-left: 20px;
-  margin-bottom: 10px;
-  width: 110px;
-  height: 106px;
-  display: block;
-  background-image: url(../img/icons/wind_sock.svg);
-  background-repeat: no-repeat;
-
-  -outline: 1px dashed blue;
-}
-
-.wind__direction {
-  margin: 0;
-  font-family: Roboto, sans-serif;
-  font-size: 20px;
-  font-weight: 400;
-  color: #fff;
-}
-
 .weather-detail__humidity-icon {
   margin-bottom: 10px;
   width: 56px;
